@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import (QApplication, QVBoxLayout, QWidget, 
                              QLabel, QHBoxLayout, QLineEdit, 
                             QPushButton, QTextEdit)
-from PyQt6.QtGui import QIcon
+from PyQt6.QtGui import QIcon, QFont
 from PyQt6.QtCore import Qt
 import sys
  
@@ -20,18 +20,26 @@ class Window(QWidget):
     # Create the Widget # 
         title_label = QLabel("Python Widget")
         title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        title_label.setFont(QFont("Consolas", 22))
 
         description = "Search the Python Widget by Title,"
         description += " Author, or Subject"
         description_label = QLabel(description)
+        description_label.setFont(QFont("Consolas", 14))
 
         search_layout = QHBoxLayout()
         self.search_field = QLineEdit()
+        self.search_field.setFont(QFont("Consolas", 12))
+
+
         search_button = QPushButton("Search")
+        search_button.setFont(QFont("Consolas", 12))
+
         search_layout.addWidget(self.search_field)
         search_layout.addWidget(search_button)
 
         results_text = QTextEdit("Results.")
+        results_text.setFont(QFont("Consolas", 12))
 
         layout.addWidget(title_label)
         layout.addWidget(description_label)
